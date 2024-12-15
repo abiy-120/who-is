@@ -1,6 +1,7 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <RouterView />
+  </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

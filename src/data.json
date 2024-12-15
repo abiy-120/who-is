@@ -1,0 +1,66 @@
+{
+  "gameData": {
+    "levels": [
+      {
+        "label": "Level 1",
+        "people": [
+          { "id": 1, "name": "Meles Zenawi", "description": "" },
+          { "id": 2, "name": "Alula Aba Nega", "description": "" },
+          { "id": 3, "name": "Emperor Yohannes", "description": "" },
+          { "id": 4, "name": "Getachew Reda", "description": "" },
+          { "id": 5, "name": "Debretsion Gebremichael", "description": "" },
+          { "id": 6, "name": "Seyoum Mesfin", "description": "" },
+          { "id": 7, "name": "Hayelom Araya", "description": "" },
+          { "id": 8, "name": "Eyasu Berhe", "description": "" },
+          { "id": 9, "name": "Kiros Alemayehu", "description": "" },
+          { "id": 10, "name": "Ataklti Hailemichael", "description": "" }
+        ]
+      },
+      {
+        "label": "Level 2",
+        "people": [
+          { "id": 1, "name": "Meles Zenawi", "description": "" },
+          { "id": 2, "name": "Alula Aba Nega", "description": "" },
+          { "id": 3, "name": "Emperor Yohannes", "description": "" },
+          { "id": 4, "name": "Getachew Reda", "description": "" },
+          { "id": 5, "name": "Debretsion Gebremichael", "description": "" },
+          { "id": 6, "name": "Seyoum Mesfin", "description": "" },
+          { "id": 7, "name": "Hayelom Araya", "description": "" },
+          { "id": 8, "name": "Eyasu Berhe", "description": "" },
+          { "id": 9, "name": "Kiros Alemayehu", "description": "" },
+          { "id": 10, "name": "Ataklti Hailemichael", "description": "" }
+        ]
+      },
+      {
+        "label": "Level 3",
+        "people": [
+          { "id": 1, "name": "Meles Zenawi", "description": "" },
+          { "id": 2, "name": "Alula Aba Nega", "description": "" },
+          { "id": 3, "name": "Emperor Yohannes", "description": "" },
+          { "id": 4, "name": "Getachew Reda", "description": "" },
+          { "id": 5, "name": "Debretsion Gebremichael", "description": "" },
+          { "id": 6, "name": "Seyoum Mesfin", "description": "" },
+          { "id": 7, "name": "Hayelom Araya", "description": "" },
+          { "id": 8, "name": "Eyasu Berhe", "description": "" },
+          { "id": 9, "name": "Kiros Alemayehu", "description": "" },
+          { "id": 10, "name": "Ataklti Hailemichael", "description": "" }
+        ]
+      },
+      {
+        "label": "Level 4",
+        "people": [
+          { "id": 1, "name": "Meles Zenawi", "description": "" },
+          { "id": 2, "name": "Alula Aba Nega", "description": "" },
+          { "id": 3, "name": "Emperor Yohannes", "description": "" },
+          { "id": 4, "name": "Getachew Reda", "description": "" },
+          { "id": 5, "name": "Debretsion Gebremichael", "description": "" },
+          { "id": 6, "name": "Seyoum Mesfin", "description": "" },
+          { "id": 7, "name": "Hayelom Araya", "description": "" },
+          { "id": 8, "name": "Eyasu Berhe", "description": "" },
+          { "id": 9, "name": "Kiros Alemayehu", "description": "" },
+          { "id": 10, "name": "Ataklti Hailemichael", "description": "" }
+        ]
+      }
+    ]
+  }
+}
