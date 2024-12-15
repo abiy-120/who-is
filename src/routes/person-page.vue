@@ -14,7 +14,7 @@
           v-for="(letter, dashIndex) in name"
           :key="`dash-${nameIndex}-${dashIndex}`"
           :text="shuffledLetters[dashLetters[`dash-${nameIndex}-${dashIndex}`]]"
-          @click="handleDashClick(nameIndex, dashIndex, letter)"
+          @click="handleDashClick(nameIndex, dashIndex)"
         />
       </div>
     </div>
@@ -51,58 +51,20 @@ const person: Person = getPerson(
   parseInt(route.params.personId as string)
 );
 const splitName = getSplitName(person.name);
+const correctName = getCleanName(person.name);
 const dashLetters = ref({});
 splitName.forEach((name, nameIndex) => {
   name.split("").forEach((letter, letterIndex) => {
     dashLetters.value[`dash-${nameIndex}-${letterIndex}`] = "";
   });
 });
-const count = ref([0, 0]);
 const shuffledLetters = {};
 getShuffledLetters(person.name).forEach(
   (letter, index) => (shuffledLetters["letter-" + index] = letter)
 );
-// const visibleLetters = ref(
-//   shuffledLetters.map((letter, index) => "letter-" + index)
-// );
-
-const manageGameCount = {
-  isDashFull: false,
-  getNameCount() {
-    return count.value[0];
-  },
-  getLetterCount() {
-    return count.value[1];
-  },
-  increaseNameCount() {
-    count.value[0]++;
-  },
-  increaseLetterCount() {
-    count.value[1]++;
-  },
-  isNameEnd() {
-    return this.getNameCount() >= dashLetters.value.length - 1;
-  },
-  isLetterEnd() {
-    return (
-      this.getLetterCount() >= dashLetters.value[this.getNameCount()].length - 1
-    );
-  },
-};
 
 const isLetterChosen = (index: string) => {
   return Object.values(dashLetters.value).includes(index);
-};
-
-const setCount = () => {
-  for (let index in dashLetters) {
-    const nullIndex = dashLetters.value[index].indexOf("");
-    if (nullIndex != -1) {
-      count.value[0] = parseInt(index);
-      count.value[1] = nullIndex;
-      break;
-    }
-  }
 };
 
 const getCurrentDash = () => {
@@ -113,51 +75,28 @@ const getCurrentDash = () => {
       ];
 };
 
-const handleCount = () => {
-  if (manageGameCount.isLetterEnd() && manageGameCount.isNameEnd()) {
-    manageGameCount.isDashFull = true;
-  } else {
-    if (manageGameCount.isLetterEnd()) {
-      count.value[1] = 0;
-      if (manageGameCount.isNameEnd()) {
-        count.value[0] = 0;
-      } else {
-        manageGameCount.increaseNameCount();
-      }
+const checkWin = () => {
+  if (!getCurrentDash()) {
+    const filledName = Object.values(dashLetters.value)
+      .map((value) => shuffledLetters[value])
+      .join("");
+    if (filledName == correctName) {
+      console.log("YOU WON!");
     } else {
-      manageGameCount.increaseLetterCount();
+      console.log("YOU LOST!");
     }
   }
-};
-
-const handleDash = {
-  get currentDash() {
-    return dashLetters.value[manageGameCount.getNameCount()][
-      manageGameCount.getLetterCount()
-    ];
-  },
-  set currentDash(value: string) {
-    dashLetters.value[manageGameCount.getNameCount()][
-      manageGameCount.getLetterCount()
-    ] = value;
-  },
 };
 
 const handleLetterClick = (index: number) => {
   const currentDash = getCurrentDash();
   if (currentDash) {
     dashLetters.value[currentDash] = index;
+    checkWin();
   }
 };
 
-const handleDashClick = (
-  nameIndex: number,
-  letterIndex: number,
-  letter: string
-) => {
-  console.log(nameIndex, letterIndex, letter);
-  dashLetters.value[nameIndex][letterIndex] = "";
-  setCount();
-  console.log(count.value);
+const handleDashClick = (nameIndex: number, letterIndex: number) => {
+  dashLetters.value[`dash-${nameIndex}-${letterIndex}`] = "";
 };
 </script>
