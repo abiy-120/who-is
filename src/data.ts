@@ -1,4 +1,5 @@
 import data from "./data.json";
+import { useStorage } from "@vueuse/core";
 
 export type Person = {
   id: number;

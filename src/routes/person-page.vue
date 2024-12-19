@@ -4,35 +4,51 @@
       class="rounded-xl min-w-1/3 h-72 object-cover"
       src="../assets/images/portrait.jpg"
     />
-    <div class="space-y-3">
-      <div
-        class="flex justify-center w-96 gap-2"
-        v-for="(name, nameIndex) in splitName"
-        :key="nameIndex"
-      >
-        <DashTile
-          v-for="(letter, dashIndex) in name"
-          :key="`dash-${nameIndex}-${dashIndex}`"
-          :text="shuffledLetters[dashLetters[`dash-${nameIndex}-${dashIndex}`]]"
-          @click="handleDashClick(nameIndex, dashIndex)"
+    <template v-if="!store.checkAnswered(personId)">
+      <div class="space-y-3">
+        <div
+          class="flex justify-center gap-2"
+          v-for="(name, nameIndex) in splitName"
+          :key="nameIndex"
+        >
+          <DashTile
+            v-for="(letter, dashIndex) in name"
+            :key="`dash-${nameIndex}-${dashIndex}`"
+            :text="
+              shuffledLetters[dashLetters[`dash-${nameIndex}-${dashIndex}`]]
+            "
+            @click="handleDashClick(nameIndex, dashIndex)"
+          />
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-center w-96 gap-1">
+        <LetterTile
+          v-for="(letter, index) in shuffledLetters"
+          :key="'letter-' + index"
+          @click="handleLetterClick(index)"
+          :show="!isLetterChosen(index)"
+          :text="letter"
         />
       </div>
-    </div>
-    <div class="flex flex-wrap justify-center w-96 gap-1">
-      <LetterTile
-        v-for="(letter, index) in shuffledLetters"
-        :key="'letter-' + index"
-        @click="handleLetterClick(index)"
-        :show="!isLetterChosen(index)"
-        :text="letter"
-      />
-    </div>
+    </template>
+    <template v-else>
+      <p class="text-5xl font-bold">{{ person.name }}</p>
+      <p class="text-2xl">{{ person.description }}</p>
+    </template>
+    <Alert
+      @changeShow="showAlert = !showAlert"
+      :show="showAlert"
+      variant="danger"
+      message="Wrong answer! Please try again."
+      :duration="1000"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
+import Alert from "../components/alert.vue";
 import {
   getCleanName,
   getImageName,
@@ -43,13 +59,16 @@ import {
 } from "../data";
 import LetterTile from "../components/letter-tile.vue";
 import DashTile from "../components/dash-tile.vue";
-import { X } from "lucide-vue-next";
+import { useGameStore } from "../global";
 
+const store = useGameStore();
 const route = useRoute();
 const person: Person = getPerson(
   parseInt(route.params.levelId as string),
   parseInt(route.params.personId as string)
 );
+const personId: string = `${route.params.levelId}-${route.params.personId}`;
+const showAlert = ref(false);
 const splitName = getSplitName(person.name);
 const correctName = getCleanName(person.name);
 const dashLetters = ref({});
@@ -81,9 +100,11 @@ const checkWin = () => {
       .map((value) => shuffledLetters[value])
       .join("");
     if (filledName == correctName) {
-      console.log("YOU WON!");
+      if (!store.checkAnswered(personId)) {
+        store.updateAnswered(personId);
+      }
     } else {
-      console.log("YOU LOST!");
+      showAlert.value = !showAlert.value;
     }
   }
 };

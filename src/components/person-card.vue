@@ -5,7 +5,9 @@
   >
     <img class="rounded-t-xl" src="../assets/images/portrait.jpg" />
     <div class="flex justify-center items-center text-lg font-bold m-2">
-      <span v-if="person.id >= 3">{{ person.name }}</span>
+      <span v-if="store.checkAnswered(answeredPersonId)">{{
+        person.name
+      }}</span>
       <CircleHelp v-else />
     </div>
   </div>
@@ -15,15 +17,17 @@
 import { CircleHelp } from "lucide-vue-next";
 import { getPerson } from "../data";
 import { useRouter } from "vue-router";
+import { useGameStore } from "../global";
 
 const router = useRouter();
+const store = useGameStore();
 
 const props = defineProps<{
   levelId: number;
   personId: number;
 }>();
-
 const person = getPerson(props.levelId, props.personId);
+const answeredPersonId = `${props.levelId}-${props.personId}`;
 
 const navigate = (levelId: number, personId: number): void => {
   router.push({
