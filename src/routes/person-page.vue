@@ -2,7 +2,7 @@
   <div class="m-5 flex flex-col justify-around items-center gap-5 select-none">
     <img
       class="rounded-xl min-w-1/3 h-72 object-cover"
-      src="../assets/images/portrait.jpg"
+      :src="`/person-images/${imageName}`"
     />
     <template v-if="!store.checkAnswered(personId)">
       <div class="space-y-3">
@@ -68,6 +68,7 @@ const person: Person = getPerson(
   parseInt(route.params.personId as string)
 );
 const personId: string = `${route.params.levelId}-${route.params.personId}`;
+const imageName = ref(getImageName(person.name));
 const showAlert = ref(false);
 const splitName = getSplitName(person.name);
 const correctName = getCleanName(person.name);

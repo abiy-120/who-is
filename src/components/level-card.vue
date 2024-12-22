@@ -2,23 +2,36 @@
   <div
     @click="navigate(levelId)"
     :class="getColorClass()"
-    class="p-10 rounded-lg text-7xl font-bold text-white cursor-pointer"
+    class="p-10 rounded-lg text-6xl font-bold text-white cursor-pointer flex justify-center items-center space-x-3"
   >
+    <LockKeyhole style="width: 1em; height: 1em" v-if="!isUnlocked" />
     <p>Level {{ levelId + 1 }}</p>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
 import { useRouter } from "vue-router";
+import { getLevel } from "../data";
+import { useGameStore } from "../global";
+import { LockKeyhole } from "lucide-vue-next";
+import { useAlert } from "../useAlert";
 
 const router = useRouter();
-
+const store = useGameStore();
+const { showAlert } = useAlert();
 const props = defineProps<{
   levelId: number;
 }>();
+const level = getLevel(props.levelId);
+const isUnlocked = ref(store.getStars >= level.stars);
 
 const navigate = (levelId: number): void => {
-  router.push({ name: "level", params: { levelId } });
+  if (isUnlocked.value) {
+    router.push({ name: "level", params: { levelId } });
+  } else {
+    showAlert(`You need at least ${level.stars} stars.`, "danger", 1000);
+  }
 };
 
 const colors = [

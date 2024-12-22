@@ -3,6 +3,7 @@
     "levels": [
       {
         "label": "Level 1",
+        "stars": 0,
         "people": [
           {
             "id": 1,
@@ -10,7 +11,7 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           },
           { "id": 2, "name": "Alula Aba Nega", "description": "" },
-          { "id": 3, "name": "Emperor Yohannes", "description": "" },
+          { "id": 3, "name": "Emperor Yohannes IV", "description": "" },
           { "id": 4, "name": "Getachew Reda", "description": "" },
           { "id": 5, "name": "Debretsion Gebremichael", "description": "" },
           { "id": 6, "name": "Seyoum Mesfin", "description": "" },
@@ -22,6 +23,7 @@
       },
       {
         "label": "Level 2",
+        "stars": 9,
         "people": [
           { "id": 1, "name": "Meles Zenawi", "description": "" },
           { "id": 2, "name": "Alula Aba Nega", "description": "" },
@@ -37,6 +39,7 @@
       },
       {
         "label": "Level 3",
+        "stars": 20,
         "people": [
           { "id": 1, "name": "Meles Zenawi", "description": "" },
           { "id": 2, "name": "Alula Aba Nega", "description": "" },
@@ -52,6 +55,7 @@
       },
       {
         "label": "Level 4",
+        "stars": 50,
         "people": [
           { "id": 1, "name": "Meles Zenawi", "description": "" },
           { "id": 2, "name": "Alula Aba Nega", "description": "" },

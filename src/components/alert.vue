@@ -1,49 +1,55 @@
 <template>
   <div
-    v-if="show"
-    class="text-sm text-center font-bold p-3 w-1/3 rounded-md fixed"
-    style="top: 90%"
+    class="text-sm font-bold p-3 rounded-md w-1/3 flex items-center justify-between"
     :class="className"
   >
-    {{ message }}
+    <div class="flex items-center">
+      <component :is="alertTypes[variant].icon" class="mr-3"></component>
+      {{ message }}
+    </div>
+    <X @click="handleClick" class="relative right-0 cursor-pointer" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { watch } from "vue";
+import { Check, CircleAlert, Info, TriangleAlert, X } from "lucide-vue-next";
+import type { AlertType, Variant } from "../types";
+import { useAlert } from "../useAlert";
 
+defineEmits(["removeElement"]);
+
+const { removeElement } = useAlert();
 const props = defineProps<{
-  show: boolean;
-  variant: "info" | "success" | "warning" | "danger";
+  id: number;
+  variant: Variant;
   message: string;
-  duration: number;
+  removeFunction: Function;
 }>();
 
-const emit = defineEmits(["changeShow"]);
-
-const variantColors: {
-  info: string;
-  success: string;
-  warning: string;
-  danger: string;
-} = {
-  info: "bg-red-400 text-red-700",
-  success: "",
-  warning: "",
-  danger: "bg-red-300 text-red-800",
+const handleClick = () => {
+  removeElement(props.id);
 };
 
-const className = `${variantColors[props.variant]}`;
-watch(
-  () => props.show,
-  (newValue) => {
-    if (newValue) {
-      setTimeout(() => {
-        emit("changeShow");
-      }, props.duration);
-    }
-  }
-);
+const alertTypes: AlertType = {
+  info: {
+    color: "bg-blue-300 text-blue-950",
+    icon: Info,
+  },
+  success: {
+    color: "bg-green-300 text-green-950",
+    icon: Check,
+  },
+  warning: {
+    color: "bg-yellow-300 text-yellow-950",
+    icon: CircleAlert,
+  },
+  danger: {
+    color: "bg-red-300 text-red-900",
+    icon: TriangleAlert,
+  },
+};
+
+const className = `${alertTypes[props.variant].color}`;
 </script>
 
 <style>

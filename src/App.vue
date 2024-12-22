@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <RouterView />
-  </div>
+  <RouterView>
+    <Header />
+  </RouterView>
 </template>
 
-<script setup></script>
+<script lang="ts" setup>
+import Header from "./components/header.vue";
+</script>
