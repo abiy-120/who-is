@@ -2,10 +2,15 @@
   <div
     @click="navigate(levelId)"
     :class="getColorClass()"
-    class="p-10 rounded-lg text-6xl font-bold text-white cursor-pointer flex justify-center items-center space-x-3"
+    class="h-36 rounded-lg min-w-80 text-white cursor-pointer flex flex-col justify-center items-center space-x-3"
   >
-    <LockKeyhole style="width: 1em; height: 1em" v-if="!isUnlocked" />
-    <p>Level {{ levelId + 1 }}</p>
+    <div class="text-6xl font-bold flex">
+      <LockKeyhole style="width: 1em; height: 1em" v-if="!isUnlocked" />
+      <p>Level {{ levelId + 1 }}</p>
+    </div>
+    <p v-if="!isUnlocked" class="text-sm mt-5 font-bold">
+      {{ level.stars }} stars needed
+    </p>
   </div>
 </template>
 

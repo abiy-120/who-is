@@ -1,5 +1,7 @@
 <template>
-  <div class="m-5 flex flex-col justify-around items-center gap-5 select-none">
+  <div
+    class="h-lvh flex flex-col justify-around items-center gap-5 select-none"
+  >
     <img
       class="rounded-xl min-w-1/3 h-72 object-cover"
       :src="`/person-images/${imageName}`"
@@ -21,7 +23,7 @@
           />
         </div>
       </div>
-      <div class="flex flex-wrap justify-center w-96 gap-1">
+      <div class="flex flex-wrap justify-center w-96 gap-1 relative bottom-0">
         <LetterTile
           v-for="(letter, index) in shuffledLetters"
           :key="'letter-' + index"
@@ -35,19 +37,14 @@
       <p class="text-5xl font-bold">{{ person.name }}</p>
       <p class="text-2xl">{{ person.description }}</p>
     </template>
-    <Alert
-      @changeShow="showAlert = !showAlert"
-      :show="showAlert"
-      variant="danger"
-      message="Wrong answer! Please try again."
-      :duration="1000"
-    />
   </div>
+  <AlertContainer />
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
+import AlertContainer from "../components/alert-container.vue";
 import Alert from "../components/alert.vue";
 import {
   getCleanName,
@@ -60,16 +57,17 @@ import {
 import LetterTile from "../components/letter-tile.vue";
 import DashTile from "../components/dash-tile.vue";
 import { useGameStore } from "../global";
+import { useAlert } from "../useAlert.ts";
 
 const store = useGameStore();
 const route = useRoute();
+const { showAlert } = useAlert();
 const person: Person = getPerson(
   parseInt(route.params.levelId as string),
   parseInt(route.params.personId as string)
 );
 const personId: string = `${route.params.levelId}-${route.params.personId}`;
 const imageName = ref(getImageName(person.name));
-const showAlert = ref(false);
 const splitName = getSplitName(person.name);
 const correctName = getCleanName(person.name);
 const dashLetters = ref({});
@@ -103,9 +101,10 @@ const checkWin = () => {
     if (filledName == correctName) {
       if (!store.checkAnswered(personId)) {
         store.updateAnswered(personId);
+        store.updateStars(3);
       }
     } else {
-      showAlert.value = !showAlert.value;
+      showAlert("Wrong Answer!", "danger", 1000);
     }
   }
 };

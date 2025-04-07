@@ -1,19 +1,19 @@
 <template>
   <div
     @click="navigate(levelId, personId)"
-    class="border border-gray-500 rounded-xl bg-gray-400 cursor-pointer h-96"
+    class="rounded-xl cursor-pointer h-96 min-w-60 max-w-80"
   >
     <img
-      class="rounded-t-xl object-cover w-full"
-      style="height: 80%"
+      class="rounded-xl object-cover w-full h-full"
+      :class="{ grayscale: !store.checkAnswered(answeredPersonId) }"
       :src="`/person-images/${imageName}`"
     />
-    <div class="flex justify-center items-center text-lg font-bold m-2">
+    <!-- <div class="flex justify-center items-center text-lg font-bold m-2">
       <span v-if="store.checkAnswered(answeredPersonId)">{{
         person.name
       }}</span>
       <CircleHelp v-else />
-    </div>
+    </div> -->
   </div>
 </template>
 

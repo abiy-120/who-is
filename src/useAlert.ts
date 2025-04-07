@@ -11,6 +11,10 @@ const alerts = ref<
 >([]);
 let index = 0;
 
+const removeElement = (id: number) => {
+  alerts.value = alerts.value.filter((item) => item.id != id);
+};
+
 const showAlert = (message: string, variant: Variant, duration?: number) => {
   alerts.value.push({
     id: index,
@@ -23,10 +27,6 @@ const showAlert = (message: string, variant: Variant, duration?: number) => {
   }
   index++;
   return index;
-};
-
-const removeElement = (id: number) => {
-  alerts.value = alerts.value.filter((item) => item.id != id);
 };
 
 const removeElementAutomatic = (id: number, duration: number) => {
