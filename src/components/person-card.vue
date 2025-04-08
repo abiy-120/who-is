@@ -18,7 +18,6 @@
 </template>
 
 <script lang="ts" setup>
-import { CircleHelp } from "lucide-vue-next";
 import { getImageName, getPerson } from "../data";
 import { useRouter } from "vue-router";
 import { useGameStore } from "../global";
@@ -32,7 +31,7 @@ const props = defineProps<{
   personId: number;
 }>();
 const person = getPerson(props.levelId, props.personId);
-const imageName = ref(getImageName(person.name));
+const imageName = ref(getImageName(person["en"].name));
 const answeredPersonId = `${props.levelId}-${props.personId}`;
 
 const navigate = (levelId: number, personId: number): void => {

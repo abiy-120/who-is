@@ -35,6 +35,11 @@ const links = [
   },
   { value: "Childhood", variant: "danger", component: Baby, link: "" },
   { value: "Info", variant: "warning", component: Info, link: "" },
-  { value: "Settings", variant: "success", component: Settings, link: "" },
+  {
+    value: "Settings",
+    variant: "success",
+    component: Settings,
+    link: "settings",
+  },
 ];
 </script>

@@ -8,72 +8,58 @@
           {
             "id": 1,
             "en": {
-              "name": "Jeff Bezos",
+              "name": "Jeff Bezzos",
               "description": "Jeff Bezos, born in 1964 in Albuquerque, New Mexico, is a titan of industry who transformed online retail as the founder of Amazon. Starting in his garage in 1994, he built the company into a global powerhouse, amassing a fortune that once made him the world’s richest person. A visionary with a sharp mind for innovation, he also founded Blue Origin to push humanity into space, reflecting his belief in a future beyond Earth. Known for his intense work ethic and bald, bespectacled persona, Bezos stepped down as Amazon’s CEO in 2021 but remains a larger-than-life figure in tech and beyond."
+            },
+            "tg": {
+              "name": "ጄፍ ቤዞስ",
+              "description": "ጄፍ ቤዞስ፣ ኣብ 1964 ኣብ ኣልቡከርክ፣ ኒው መክሲኮ ተወሊዱ፣ ንኦንላይን መሸጣ ብምምስራቱ ኣብ ኢንዱስትሪ ዝዓበየ ሰብ እዩ። ኣብ 1994 ካብ ጋራዡ ጀሚሩ ንኣማዞን መስሪቱ፣ ነቲ ትካል ናብ ዓለማዊ ሓይሊ ገበሮ፣ ሓደ ግዜ ንሱ እቲ ኣብ ዓለም ዝበዝሐ ሃብታም ሰብ ክኸውን ዝኸኣለ ሃብቲ ኣኪቡ። ሓደ ተራእዩን ብልሕ ኣእምሮኡን ዘለዎ፣ ብሉ ኦሪጂን መስሪቱ ሰብኣውነት ናብ ጠፈር ንምስግጋር ይሰርሕ፣ ኣብ መጻኢ ናይ ምድሪ ደገ እምነቱ ዘንጸባርቕ። ብጽንዓቱን መነጽርን ድምበዛንን ዝፍለጥ፣ ቤዞስ ኣብ 2021 ካብ ስራሕ ሲኢኦ ኣማዞን ወሪዱ ግን ኣብ ቴክኖሎጂን ካልእን ዓቢ ምስሊ እዩ ዝነብር።"
             }
           },
           {
             "id": 2,
-            "en": {
-              "name": "Elon Musk",
-              "description": "Elon Musk, born in 1971 in Pretoria, South Africa, is a maverick entrepreneur whose bold ideas have redefined industries. After co-founding PayPal, he went on to lead Tesla (electric vehicles), SpaceX (space travel), and Neuralink (brain-computer interfaces), blending genius with a flair for the dramatic. His goal to colonize Mars and obsession with futuristic tech make him a polarizing yet captivating figure. With his quirky humor, relentless drive, and a fortune that fluctuates wildly, Musk is a real-life Tony Stark, constantly pushing boundaries and sparking debate."
-            }
+            "en": { "name": "Alula Aba Nega", "description": "" },
+            "tg": { "name": "ኣሉላ ኣባ ነጋ", "description": "" }
           },
           {
             "id": 3,
-            "en": {
-              "name": "Bill Gates",
-              "description": "Bill Gates, born in 1955 in Seattle, Washington, is a tech pioneer who co-founded Microsoft and shaped the personal computer revolution. His creation of Windows made him a household name and, for years, the world’s richest man. After stepping back from Microsoft, Gates turned to philanthropy through the Bill & Melinda Gates Foundation, tackling global health and poverty with data-driven precision. Soft-spoken yet influential, with his iconic glasses and sweater look, he’s a blend of nerdy brilliance and quiet power, though not without controversy over his wealth and influence."
-            }
+            "en": { "name": "Emperor Yohannes IV", "description": "" },
+            "tg": { "name": "ሃፀይ ዮሃንስ ራብዓይ", "description": "" }
           },
           {
             "id": 4,
-            "en": {
-              "name": "Mark Zuckerberg",
-              "description": "Mark Zuckerberg, born in 1984 in White Plains, New York, is the hoodie-wearing tech prodigy who launched Facebook from his Harvard dorm in 2004. What began as a college networking site grew into Meta, a social media and tech empire that connects billions but often courts criticism over privacy and power. A reserved yet ambitious figure, Zuckerberg’s push into virtual reality and the metaverse shows his relentless drive to shape digital life. His youthful appearance belies a calculating mind that’s made him one of the most influential—and debated—figures in tech."
-            }
+            "en": { "name": "Getachew Reda", "description": "" },
+            "tg": { "name": "ጌታቸው ረዳ", "description": "" }
           },
           {
             "id": 5,
-            "en": {
-              "name": "Warren Buffet",
-              "description": "Warren Buffett, born in 1930 in Omaha, Nebraska, is the folksy investment guru dubbed the “Oracle of Omaha.” As CEO of Berkshire Hathaway, he turned a knack for picking stocks into one of the world’s largest fortunes, all while living modestly and sipping Cherry Coke. His long-term, value-driven approach to wealth-building has made him a legend among investors, and his pledge to give away most of his billions via the Giving Pledge adds a altruistic twist. White-haired and wise, Buffett’s charm lies in his simplicity amid staggering success."
-            }
+            "en": { "name": "Debretsion Gebremichael", "description": "" },
+            "tg": { "name": "ደብረፅዮን ገብረሚካኤል", "description": "" }
           },
           {
             "id": 6,
-            "en": {
-              "name": "Donald Trump",
-              "description": "Donald Trump, born in 1946 in Queens, New York, is a brash real estate mogul turned reality TV star and 45th U.S. President (2017–2021). Known for his golden hair, bombastic speeches, and “The Apprentice” catchphrase “You’re fired,” he built a brand on luxury and controversy. His presidency polarized the nation with policies like border walls and tax cuts, while his larger-than-life persona—love him or hate him—keeps him a fixture in global headlines. Trump’s a wildcard whose unpredictability fuels his outsized influence."
-            }
+            "en": { "name": "Seyoum Mesfin", "description": "" },
+            "tg": { "name": "ስዩም መስፍን", "description": "" }
           },
           {
             "id": 7,
-            "en": {
-              "name": "Barack Obama",
-              "description": "Barack Obama, born in 1961 in Honolulu, Hawaii, made history as the first African-American U.S. President, serving from 2009 to 2017. A charismatic orator with a cool, collected demeanor, he rose from community organizer to senator to global icon, winning the Nobel Peace Prize in 2009. His tenure brought the Affordable Care Act and the Osama bin Laden raid, though it faced fierce opposition. With his trademark grin and reflective style, Obama remains a symbol of hope and change for many, even after leaving the White House."
-            }
+            "en": { "name": "Hayelom Araya", "description": "" },
+            "tg": { "name": "ሓየሎም ኣርኣያ", "description": "" }
           },
           {
             "id": 8,
-            "en": {
-              "name": "Cristiano Ronaldo",
-              "description": "Cristiano Ronaldo, born in 1985 in Madeira, Portugal, is a soccer legend whose speed, skill, and charisma have made him a global superstar. Rising from humble beginnings, he’s shattered records at clubs like Manchester United, Real Madrid, and Juventus, winning five Ballon d’Or awards as the world’s best player. Known for his chiseled physique, relentless work ethic, and flair for dramatic goals, Ronaldo’s off-field persona—stylish, confident, and a bit vain—matches his on-field dominance. He’s a sporting icon whose name echoes far beyond the pitch."
-            }
+            "en": { "name": "Eyasu Berhe", "description": "" },
+            "tg": { "name": "እያሱ በርሀ", "description": "" }
           },
           {
             "id": 9,
-            "en": {
-              "name": "Meles Zenawi",
-              "description": "Meles Zenawi, born in 1955 in Adwa, Tigray, was a revolutionary turned statesman who led Ethiopia as Prime Minister from 1995 until his death in 2012. Rising through the Tigray People’s Liberation Front, he helped overthrow a brutal regime in 1991 before steering the nation toward economic growth and modernization. A sharp intellect with a reserved demeanor, he was praised for development. Meles remains a complex figure—strategic, divisive, and pivotal in Ethiopia’s modern story."
-            }
+            "en": { "name": "Kiros Alemayehu", "description": "" },
+            "tg": { "name": "ኪሮስ ኣለማየሁ", "description": "" }
           },
           {
             "id": 10,
-            "en": {
-              "name": "Alula Aba Nega",
-              "description": "Ras Alula Aba Nega was a prominent Tigrayan general and politician of the 19th century, renowned for his military prowess and strategic brilliance. He played a crucial role in defending Ethiopia against foreign incursions, particularly those of Ottoman Egypt, the Mahdist State, and Italy. Rising from humble origins, he ascended through the ranks to become a key figure in Emperor Yohannes IV's court, demonstrating exceptional leadership in numerous battles. His contributions were vital in preserving Ethiopia's sovereignty during a period of intense European colonial expansion, earning him a place of high esteem in Ethiopian history."
-            }
+            "en": { "name": "Ataklti Hailemichael", "description": "" },
+            "tg": { "name": "ኣታኽልቲ ሃይለሚካኤል", "description": "" }
           }
         ]
       },

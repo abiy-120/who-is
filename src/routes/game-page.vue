@@ -13,8 +13,8 @@ import AlertContainer from "../components/alert-container.vue";
 import { levels } from "../data";
 import { useGameStore } from "../global";
 
-const store = useGameStore();
-store.changeTitle("Level 2");
+const { changeTitle } = useGameStore();
+changeTitle("");
 </script>
 
 <style></style>

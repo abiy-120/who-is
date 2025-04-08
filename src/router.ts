@@ -8,6 +8,8 @@ import LevelPage from "./routes/level-page.vue";
 // @ts-ignore
 import PersonPage from "./routes/person-page.vue";
 
+import SettingPage from "./routes/setting-page.vue";
+
 const routes = [
   { path: "/", name: "homepage", component: HomePage },
   { path: "/game", name: "game", component: GamePage },
@@ -16,6 +18,11 @@ const routes = [
     path: "/game/level/:levelId/:personId",
     name: "person",
     component: PersonPage,
+  },
+  {
+    path: "/settings",
+    name: "settings",
+    component: SettingPage,
   },
 ];
 

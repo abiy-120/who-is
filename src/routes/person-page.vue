@@ -2,11 +2,37 @@
   <div
     class="h-lvh flex flex-col justify-around items-center gap-5 select-none"
   >
-    <img
-      class="rounded-xl min-w-1/3 h-72 object-cover"
-      :src="`/person-images/${imageName}`"
-    />
-    <template v-if="!store.checkAnswered(personId)">
+    <div class="cursor-pointer">
+      <ChevronLeft
+        v-if="personIndex > 0"
+        class="fixed left-0 top-1/2 hover:text-gray-600 active:text-gray-800"
+        :size="90"
+        @click="handleNavigationButtonClick('left')"
+      />
+      <ChevronRight
+        v-if="personIndex < levelLength - 1"
+        class="fixed right-0 top-1/2 hover:text-gray-600 active:text-gray-800"
+        :size="90"
+        @click="handleNavigationButtonClick('right')"
+      />
+    </div>
+    <div class="flex gap-3">
+      <img
+        class="rounded-xl min-w-1/3 h-72 object-cover"
+        :src="`/person-images/${imageName}`"
+      />
+      <div class="right-0 relative flex flex-col gap-3">
+        <SkipForward
+          :size="40"
+          class="bg-gray-300 p-2 border border-gray-400 hover:bg-gray-400 active:p-3 rounded-lg cursor-pointer"
+        />
+        <Baseline
+          :size="40"
+          class="bg-gray-300 p-2 border border-gray-400 hover:bg-gray-400 active:p-3 rounded-lg cursor-pointer"
+        />
+      </div>
+    </div>
+    <template v-if="!checkAnswered(personId)">
       <div class="space-y-3">
         <div
           class="flex justify-center gap-2"
@@ -34,24 +60,36 @@
       </div>
     </template>
     <template v-else>
-      <p class="text-5xl font-bold">{{ person.name }}</p>
-      <p class="text-2xl">{{ person.description }}</p>
+      <p class="text-4xl font-bold">{{ person[getLang].name }}</p>
+      <div class="max-w-[80%] md:max-w-[50%] m-5">
+        <p class="text-lg text-justify">{{ person[getLang].description }}</p>
+      </div>
     </template>
   </div>
   <AlertContainer />
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { ref, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import AlertContainer from "../components/alert-container.vue";
-import Alert from "../components/alert.vue";
+import {
+  ChevronRight,
+  ChevronLeft,
+  Play,
+  PlaySquare,
+  PlaySquareIcon,
+  Pause,
+  SkipForward,
+  Baseline,
+} from "lucide-vue-next";
 import {
   getCleanName,
   getImageName,
   getPerson,
   getShuffledLetters,
   getSplitName,
+  levelLength,
   type Person,
 } from "../data";
 import LetterTile from "../components/letter-tile.vue";
@@ -59,17 +97,33 @@ import DashTile from "../components/dash-tile.vue";
 import { useGameStore } from "../global";
 import { useAlert } from "../useAlert.ts";
 
-const store = useGameStore();
+const { checkAnswered, updateAnswered, updateStars, getLang } = useGameStore();
 const route = useRoute();
+const router = useRouter();
 const { showAlert } = useAlert();
-const person: Person = getPerson(
-  parseInt(route.params.levelId as string),
-  parseInt(route.params.personId as string)
-);
+
+const levelIndex = ref(parseInt(route.params.levelId as string));
+const personIndex = ref(parseInt(route.params.personId as string));
+
+let person = ref<Person>(getPerson(levelIndex.value, personIndex.value));
+
+const handleNavigationButtonClick = async (direction: string) => {
+  const nextPersonIndex =
+    direction == "left" ? personIndex.value - 1 : personIndex.value + 1;
+  await router.replace({
+    name: "person",
+    params: {
+      levelId: levelIndex.value.toString(),
+      personId: nextPersonIndex.toString(),
+    },
+  });
+  window.location.reload();
+};
+
 const personId: string = `${route.params.levelId}-${route.params.personId}`;
-const imageName = ref(getImageName(person.name));
-const splitName = getSplitName(person.name);
-const correctName = getCleanName(person.name);
+const imageName = ref(getImageName(person.value["en"].name));
+const splitName = getSplitName(person.value[getLang].name);
+const correctName = getCleanName(person.value[getLang].name);
 const dashLetters = ref({});
 splitName.forEach((name, nameIndex) => {
   name.split("").forEach((letter, letterIndex) => {
@@ -77,7 +131,7 @@ splitName.forEach((name, nameIndex) => {
   });
 });
 const shuffledLetters = {};
-getShuffledLetters(person.name).forEach(
+getShuffledLetters(person.value[getLang].name, getLang).forEach(
   (letter, index) => (shuffledLetters["letter-" + index] = letter)
 );
 
@@ -99,9 +153,9 @@ const checkWin = () => {
       .map((value) => shuffledLetters[value])
       .join("");
     if (filledName == correctName) {
-      if (!store.checkAnswered(personId)) {
-        store.updateAnswered(personId);
-        store.updateStars(3);
+      if (!checkAnswered(personId)) {
+        updateAnswered(personId);
+        updateStars(3);
       }
     } else {
       showAlert("Wrong Answer!", "danger", 1000);

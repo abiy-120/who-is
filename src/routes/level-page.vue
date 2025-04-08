@@ -1,6 +1,5 @@
 <template>
   <Header />
-  <!-- <p class="text-center text-6xl font-bold">Level {{ levelId + 1 }}</p> -->
   <div
     class="p-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 justify-center"
   >
@@ -20,10 +19,10 @@ import { useRoute } from "vue-router";
 import { getLevel, type Level } from "../data";
 import { useGameStore } from "../global";
 
-const store = useGameStore();
-store.changeTitle("Level 2");
+const { changeTitle } = useGameStore();
 
 const route = useRoute();
 const levelId: number = parseInt(route.params.levelId as string);
 const level: Level = getLevel(levelId);
+changeTitle("Level " + (levelId + 1));
 </script>
