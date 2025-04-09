@@ -6,7 +6,7 @@ export const useGameStore = defineStore("gameStore", () => {
   const answered = useLocalStorage("answered", [] as string[]);
   const keys = useLocalStorage("keys", 0);
   const stars = useLocalStorage("stars", 0);
-  const lang = useLocalStorage<"en" | "tg">("lang", "en");
+  const lang = useLocalStorage<"en">("lang", "en");
   const title = ref("");
   const getAnswered = computed(() => answered.value);
   const getKeys = computed(() => keys.value);
@@ -32,7 +32,7 @@ export const useGameStore = defineStore("gameStore", () => {
     return answered.value.includes(value);
   }
 
-  function changeLang(value: string) {
+  function changeLang(value: "en") {
     lang.value = value;
   }
 

@@ -12,11 +12,26 @@ import SettingPage from "./routes/setting-page.vue";
 
 const routes = [
   { path: "/", name: "homepage", component: HomePage },
-  { path: "/game", name: "game", component: GamePage },
+  { path: "/game/", name: "game", component: GamePage },
+  {
+    path: "/game/:childhood(childhood)",
+    name: "childhood",
+    component: GamePage,
+  },
   { path: "/game/level/:levelId", name: "level", component: LevelPage },
   {
-    path: "/game/level/:levelId/:personId",
+    path: "/game/level/:childhood(childhood)/:levelId",
+    name: "childhood-level",
+    component: LevelPage,
+  },
+  {
+    path: "/game/level/:levelId(\\d+)/:personId",
     name: "person",
+    component: PersonPage,
+  },
+  {
+    path: "/game/level/:childhood(childhood)/:levelId(\\d+)/:personId",
+    name: "childhood-person",
     component: PersonPage,
   },
   {

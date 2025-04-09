@@ -12,7 +12,7 @@
         radius="lg"
       >
         <RouterLink
-          :to="{ name: link.link }"
+          :to="link.link"
           class="flex justify-center items-center h-24 text-5xl"
         >
           <component :is="link.component" style="width: 1em; height: 1em" />
@@ -31,15 +31,20 @@ const links = [
     value: "Play",
     variant: "primary",
     component: Gamepad2,
-    link: "game",
+    link: "/game",
   },
-  { value: "Childhood", variant: "danger", component: Baby, link: "" },
-  { value: "Info", variant: "warning", component: Info, link: "" },
+  {
+    value: "Childhood",
+    variant: "danger",
+    component: Baby,
+    link: "/game/childhood",
+  },
+  { value: "Info", variant: "warning", component: Info, link: "/" },
   {
     value: "Settings",
     variant: "success",
     component: Settings,
-    link: "settings",
+    link: "/settings",
   },
 ];
 </script>

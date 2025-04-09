@@ -1,5 +1,4 @@
 import data from "./data.json";
-import { useStorage } from "@vueuse/core";
 
 export type Person = {
   id: number;
@@ -7,10 +6,7 @@ export type Person = {
     name: string;
     description: string;
   };
-  tg: {
-    name: string;
-    description: string;
-  };
+  childhood: boolean;
 };
 
 export type Level = {
@@ -325,4 +321,8 @@ export const getShuffledLetters = (name: string, lang: "en" | "tg") => {
   return shuffleArray([...name.toUpperCase().split(""), ...newLetters]);
 };
 
-export const levelLength = levels[0].people.length;
+export const getlevelLength = (levelId: number, childhood?: boolean) => {
+  return childhood
+    ? levels[levelId].people.filter((person) => person.childhood).length
+    : levels[levelId].people.length;
+};

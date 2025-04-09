@@ -27,13 +27,17 @@ const store = useGameStore();
 const { showAlert } = useAlert();
 const props = defineProps<{
   levelId: number;
+  childhood?: boolean;
 }>();
 const level = getLevel(props.levelId);
 const isUnlocked = ref(store.getStars >= level.stars);
 
 const navigate = (levelId: number): void => {
   if (isUnlocked.value) {
-    router.push({ name: "level", params: { levelId } });
+    router.push({
+      name: props.childhood ? "childhood-level" : "level",
+      params: { levelId },
+    });
   } else {
     showAlert(`You need at least ${level.stars} stars.`, "danger", 1000);
   }

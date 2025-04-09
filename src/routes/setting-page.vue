@@ -20,11 +20,11 @@
 import { ref } from "vue";
 import Button from "../components/button.vue";
 import { useGameStore } from "../global";
-const { changeLang, getLang } = useGameStore();
+const store = useGameStore();
 
-const lang = ref(getLang);
+const lang = ref(store.getLang);
 
 const handleClick = () => {
-  changeLang(lang.value);
+  store.changeLang(lang.value);
 };
 </script>

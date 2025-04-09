@@ -6,7 +6,7 @@
     <img
       class="rounded-xl object-cover w-full h-full"
       :class="{ grayscale: !store.checkAnswered(answeredPersonId) }"
-      :src="`/person-images/${imageName}`"
+      :src="`/person-images/${childhood ? 'childhood/' : ''}${imageName}`"
     />
     <!-- <div class="flex justify-center items-center text-lg font-bold m-2">
       <span v-if="store.checkAnswered(answeredPersonId)">{{
@@ -29,6 +29,7 @@ const store = useGameStore();
 const props = defineProps<{
   levelId: number;
   personId: number;
+  childhood?: boolean;
 }>();
 const person = getPerson(props.levelId, props.personId);
 const imageName = ref(getImageName(person["en"].name));
@@ -36,7 +37,7 @@ const answeredPersonId = `${props.levelId}-${props.personId}`;
 
 const navigate = (levelId: number, personId: number): void => {
   router.push({
-    name: "person",
+    name: props.childhood ? "childhood-person" : "person",
     params: { levelId, personId },
   });
 };
