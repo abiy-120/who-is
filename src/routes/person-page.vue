@@ -114,7 +114,9 @@ const childhood = ref(route.params.childhood == "childhood");
 
 const person = ref<Person>(getPerson(levelIndex.value, personIndex.value));
 
-const personId: string = `${route.params.levelId}-${route.params.personId}`;
+const personId: string = childhood.value
+  ? `ch-${route.params.levelId}-${route.params.personId}`
+  : `${route.params.levelId}-${route.params.personId}`;
 const imageName = ref(getImageName(person.value["en"].name));
 const splitName = getSplitName(person.value[getLang].name);
 const correctName = getCleanName(person.value[getLang].name);

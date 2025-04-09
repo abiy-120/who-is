@@ -8,12 +8,6 @@
       :class="{ grayscale: !store.checkAnswered(answeredPersonId) }"
       :src="`/person-images/${childhood ? 'childhood/' : ''}${imageName}`"
     />
-    <!-- <div class="flex justify-center items-center text-lg font-bold m-2">
-      <span v-if="store.checkAnswered(answeredPersonId)">{{
-        person.name
-      }}</span>
-      <CircleHelp v-else />
-    </div> -->
   </div>
 </template>
 
@@ -33,7 +27,9 @@ const props = defineProps<{
 }>();
 const person = getPerson(props.levelId, props.personId);
 const imageName = ref(getImageName(person["en"].name));
-const answeredPersonId = `${props.levelId}-${props.personId}`;
+const answeredPersonId = props.childhood
+  ? `ch-${props.levelId}-${props.personId}`
+  : `${props.levelId}-${props.personId}`;
 
 const navigate = (levelId: number, personId: number): void => {
   router.push({
