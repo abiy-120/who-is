@@ -32,7 +32,7 @@ const getLevels = computed(() => {
 });
 
 const { changeTitle } = useGameStore();
-changeTitle("");
+changeTitle(childhood.value ? "Childhood" : "Play");
 </script>
 
 <style></style>

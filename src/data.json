@@ -4,6 +4,7 @@
       {
         "label": "Level 1",
         "stars": 0,
+        "childhoodStars": 12,
         "people": [
           {
             "id": 1,
@@ -40,7 +41,7 @@
           {
             "id": 5,
             "en": {
-              "name": "Warren Buffet",
+              "name": "Warren Buffett",
               "description": "Warren Buffett, born in 1930 in Omaha, Nebraska, is the folksy investment guru dubbed the “Oracle of Omaha.” As CEO of Berkshire Hathaway, he turned a knack for picking stocks into one of the world’s largest fortunes, all while living modestly and sipping Cherry Coke. His long-term, value-driven approach to wealth-building has made him a legend among investors, and his pledge to give away most of his billions via the Giving Pledge adds a altruistic twist. White-haired and wise, Buffett’s charm lies in his simplicity amid staggering success."
             },
             "childhood": true
@@ -82,6 +83,14 @@
             "en": {
               "name": "Alula Aba Nega",
               "description": "Ras Alula Aba Nega was a prominent Tigrayan general and politician of the 19th century, renowned for his military prowess and strategic brilliance. He played a crucial role in defending Ethiopia against foreign incursions, particularly those of Ottoman Egypt, the Mahdist State, and Italy. Rising from humble origins, he ascended through the ranks to become a key figure in Emperor Yohannes IV's court, demonstrating exceptional leadership in numerous battles. His contributions were vital in preserving Ethiopia's sovereignty during a period of intense European colonial expansion, earning him a place of high esteem in Ethiopian history."
+            },
+            "childhood": false
+          },
+          {
+            "id": 11,
+            "en": {
+              "name": "Emperor Yohannes IV",
+              "description": "Emperor Yohannes IV, originally named Kassa, was born in 1831 in Tembien, Tigray. Rising from regional nobility, he ascended to the imperial throne, dedicating his reign to unifying Ethiopia and defending it against external threats. He skillfully navigated internal political rivalries while simultaneously repelling invasions from Egypt and later, facing the Mahdist forces of Sudan. A devout adherent of the Ethiopian Orthodox Church, he sought to strengthen its influence, and his military prowess was ultimately tested in the Battle of Metemma, where, despite leading his army to near victory against Mahdist forces, he was fatally wounded by a sniper’s bullet leading to his death."
             },
             "childhood": false
           }
@@ -89,7 +98,8 @@
       },
       {
         "label": "Level 2",
-        "stars": 9,
+        "stars": 15,
+        "childhoodStars": 27,
         "people": [
           {
             "id": 1,
@@ -126,7 +136,7 @@
           {
             "id": 5,
             "en": {
-              "name": "Warren Buffet",
+              "name": "Warren Buffett",
               "description": "Warren Buffett, born in 1930 in Omaha, Nebraska, is the folksy investment guru dubbed the “Oracle of Omaha.” As CEO of Berkshire Hathaway, he turned a knack for picking stocks into one of the world’s largest fortunes, all while living modestly and sipping Cherry Coke. His long-term, value-driven approach to wealth-building has made him a legend among investors, and his pledge to give away most of his billions via the Giving Pledge adds a altruistic twist. White-haired and wise, Buffett’s charm lies in his simplicity amid staggering success."
             },
             "childhood": true
@@ -168,6 +178,14 @@
             "en": {
               "name": "Alula Aba Nega",
               "description": "Ras Alula Aba Nega was a prominent Tigrayan general and politician of the 19th century, renowned for his military prowess and strategic brilliance. He played a crucial role in defending Ethiopia against foreign incursions, particularly those of Ottoman Egypt, the Mahdist State, and Italy. Rising from humble origins, he ascended through the ranks to become a key figure in Emperor Yohannes IV's court, demonstrating exceptional leadership in numerous battles. His contributions were vital in preserving Ethiopia's sovereignty during a period of intense European colonial expansion, earning him a place of high esteem in Ethiopian history."
+            },
+            "childhood": false
+          },
+          {
+            "id": 11,
+            "en": {
+              "name": "Emperor Yohannes IV",
+              "description": "Emperor Yohannes IV, originally named Kassa, was born in 1831 in Tembien, Tigray. Rising from regional nobility, he ascended to the imperial throne, dedicating his reign to unifying Ethiopia and defending it against external threats. He skillfully navigated internal political rivalries while simultaneously repelling invasions from Egypt and later, facing the Mahdist forces of Sudan. A devout adherent of the Ethiopian Orthodox Church, he sought to strengthen its influence, and his military prowess was ultimately tested in the Battle of Metemma, where, despite leading his army to near victory against Mahdist forces, he was fatally wounded by a sniper’s bullet leading to his death."
             },
             "childhood": false
           }
@@ -175,7 +193,8 @@
       },
       {
         "label": "Level 3",
-        "stars": 20,
+        "stars": 45,
+        "childhoodStars": 72,
         "people": [
           {
             "id": 1,
@@ -212,7 +231,7 @@
           {
             "id": 5,
             "en": {
-              "name": "Warren Buffet",
+              "name": "Warren Buffett",
               "description": "Warren Buffett, born in 1930 in Omaha, Nebraska, is the folksy investment guru dubbed the “Oracle of Omaha.” As CEO of Berkshire Hathaway, he turned a knack for picking stocks into one of the world’s largest fortunes, all while living modestly and sipping Cherry Coke. His long-term, value-driven approach to wealth-building has made him a legend among investors, and his pledge to give away most of his billions via the Giving Pledge adds a altruistic twist. White-haired and wise, Buffett’s charm lies in his simplicity amid staggering success."
             },
             "childhood": true
@@ -254,6 +273,14 @@
             "en": {
               "name": "Alula Aba Nega",
               "description": "Ras Alula Aba Nega was a prominent Tigrayan general and politician of the 19th century, renowned for his military prowess and strategic brilliance. He played a crucial role in defending Ethiopia against foreign incursions, particularly those of Ottoman Egypt, the Mahdist State, and Italy. Rising from humble origins, he ascended through the ranks to become a key figure in Emperor Yohannes IV's court, demonstrating exceptional leadership in numerous battles. His contributions were vital in preserving Ethiopia's sovereignty during a period of intense European colonial expansion, earning him a place of high esteem in Ethiopian history."
+            },
+            "childhood": false
+          },
+          {
+            "id": 11,
+            "en": {
+              "name": "Emperor Yohannes IV",
+              "description": "Emperor Yohannes IV, originally named Kassa, was born in 1831 in Tembien, Tigray. Rising from regional nobility, he ascended to the imperial throne, dedicating his reign to unifying Ethiopia and defending it against external threats. He skillfully navigated internal political rivalries while simultaneously repelling invasions from Egypt and later, facing the Mahdist forces of Sudan. A devout adherent of the Ethiopian Orthodox Church, he sought to strengthen its influence, and his military prowess was ultimately tested in the Battle of Metemma, where, despite leading his army to near victory against Mahdist forces, he was fatally wounded by a sniper’s bullet leading to his death."
             },
             "childhood": false
           }
@@ -261,7 +288,8 @@
       },
       {
         "label": "Level 4",
-        "stars": 50,
+        "stars": 75,
+        "childhoodStars": 102,
         "people": [
           {
             "id": 1,
@@ -269,7 +297,7 @@
               "name": "Jeff Bezos",
               "description": "Jeff Bezos, born in 1964 in Albuquerque, New Mexico, is a titan of industry who transformed online retail as the founder of Amazon. Starting in his garage in 1994, he built the company into a global powerhouse, amassing a fortune that once made him the world’s richest person. A visionary with a sharp mind for innovation, he also founded Blue Origin to push humanity into space, reflecting his belief in a future beyond Earth. Known for his intense work ethic and bald, bespectacled persona, Bezos stepped down as Amazon’s CEO in 2021 but remains a larger-than-life figure in tech and beyond."
             },
-            "childhood": false
+            "childhood": true
           },
           {
             "id": 2,
@@ -277,7 +305,7 @@
               "name": "Elon Musk",
               "description": "Elon Musk, born in 1971 in Pretoria, South Africa, is a maverick entrepreneur whose bold ideas have redefined industries. After co-founding PayPal, he went on to lead Tesla (electric vehicles), SpaceX (space travel), and Neuralink (brain-computer interfaces), blending genius with a flair for the dramatic. His goal to colonize Mars and obsession with futuristic tech make him a polarizing yet captivating figure. With his quirky humor, relentless drive, and a fortune that fluctuates wildly, Musk is a real-life Tony Stark, constantly pushing boundaries and sparking debate."
             },
-            "childhood": false
+            "childhood": true
           },
           {
             "id": 3,
@@ -298,7 +326,7 @@
           {
             "id": 5,
             "en": {
-              "name": "Warren Buffet",
+              "name": "Warren Buffett",
               "description": "Warren Buffett, born in 1930 in Omaha, Nebraska, is the folksy investment guru dubbed the “Oracle of Omaha.” As CEO of Berkshire Hathaway, he turned a knack for picking stocks into one of the world’s largest fortunes, all while living modestly and sipping Cherry Coke. His long-term, value-driven approach to wealth-building has made him a legend among investors, and his pledge to give away most of his billions via the Giving Pledge adds a altruistic twist. White-haired and wise, Buffett’s charm lies in his simplicity amid staggering success."
             },
             "childhood": false
@@ -340,6 +368,14 @@
             "en": {
               "name": "Alula Aba Nega",
               "description": "Ras Alula Aba Nega was a prominent Tigrayan general and politician of the 19th century, renowned for his military prowess and strategic brilliance. He played a crucial role in defending Ethiopia against foreign incursions, particularly those of Ottoman Egypt, the Mahdist State, and Italy. Rising from humble origins, he ascended through the ranks to become a key figure in Emperor Yohannes IV's court, demonstrating exceptional leadership in numerous battles. His contributions were vital in preserving Ethiopia's sovereignty during a period of intense European colonial expansion, earning him a place of high esteem in Ethiopian history."
+            },
+            "childhood": false
+          },
+          {
+            "id": 11,
+            "en": {
+              "name": "Emperor Yohannes IV",
+              "description": "Emperor Yohannes IV, originally named Kassa, was born in 1831 in Tembien, Tigray. Rising from regional nobility, he ascended to the imperial throne, dedicating his reign to unifying Ethiopia and defending it against external threats. He skillfully navigated internal political rivalries while simultaneously repelling invasions from Egypt and later, facing the Mahdist forces of Sudan. A devout adherent of the Ethiopian Orthodox Church, he sought to strengthen its influence, and his military prowess was ultimately tested in the Battle of Metemma, where, despite leading his army to near victory against Mahdist forces, he was fatally wounded by a sniper’s bullet leading to his death."
             },
             "childhood": false
           }

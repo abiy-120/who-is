@@ -12,6 +12,7 @@ export type Person = {
 export type Level = {
   label: string;
   stars: number;
+  childhoodStars: number;
   people: Person[];
 };
 

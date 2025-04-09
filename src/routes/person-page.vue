@@ -67,7 +67,9 @@
     <template v-else>
       <p class="text-4xl font-bold">{{ person[getLang].name }}</p>
       <div class="max-w-[80%] md:max-w-[50%] m-5">
-        <p class="text-lg text-justify">{{ person[getLang].description }}</p>
+        <p class="text-lg text-justify mb-10">
+          {{ person[getLang].description }}
+        </p>
       </div>
     </template>
   </div>
@@ -143,6 +145,7 @@ const handleNavigationButtonClick = async (direction: string) => {
 
 const handleRevealAllLettersClick = async () => {
   if (store.getKeys >= 3) {
+    cheatOn.value = true;
     const dashLetterValues = Object.values(dashLetters.value);
     for (let i = 0; i < dashLetterValues.length; i++) {
       if (dashLetterValues[i] == "") {
@@ -163,6 +166,7 @@ const handleRevealAllLettersClick = async () => {
 
 const handleRevealOneLetterClick = () => {
   if (store.getKeys >= 1) {
+    cheatOn.value = true;
     const choosenLetter =
       correctName[Object.values(dashLetters.value).indexOf("")];
     const letterPosition =
@@ -196,9 +200,9 @@ const checkWin = () => {
     if (filledName == correctName) {
       if (!checkAnswered(personId)) {
         updateAnswered(personId);
-        updateStars(3);
-        if (!cheatOn) {
-          updateKeys(3);
+        updateStars(childhood.value ? 5 : 3);
+        if (!cheatOn.value) {
+          updateKeys(childhood.value ? 3 : 1);
         }
       }
     } else {

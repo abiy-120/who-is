@@ -39,12 +39,5 @@ const links = [
     component: Baby,
     link: "/game/childhood",
   },
-  { value: "Info", variant: "warning", component: Info, link: "/" },
-  {
-    value: "Settings",
-    variant: "success",
-    component: Settings,
-    link: "/settings",
-  },
 ];
 </script>

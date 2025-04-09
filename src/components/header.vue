@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-between p-2 text-white font-bold w-full h-16 bg-cyan-700"
+    class="flex items-center justify-between p-2 text-white font-bold w-full h-16 bg-pink-800"
   >
     <p></p>
     <p class="text-3xl font-bold text-center">{{ store.getTitle }}</p>

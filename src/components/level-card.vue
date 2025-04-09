@@ -9,7 +9,7 @@
       <p>Level {{ levelId + 1 }}</p>
     </div>
     <p v-if="!isUnlocked" class="text-sm mt-5 font-bold">
-      {{ level.stars }} stars needed
+      {{ requiredStars }} stars needed
     </p>
   </div>
 </template>
@@ -30,7 +30,8 @@ const props = defineProps<{
   childhood?: boolean;
 }>();
 const level = getLevel(props.levelId);
-const isUnlocked = ref(store.getStars >= level.stars);
+const requiredStars = props.childhood ? level.childhoodStars : level.stars;
+const isUnlocked = ref(store.getStars >= requiredStars);
 
 const navigate = (levelId: number): void => {
   if (isUnlocked.value) {
@@ -39,7 +40,7 @@ const navigate = (levelId: number): void => {
       params: { levelId },
     });
   } else {
-    showAlert(`You need at least ${level.stars} stars.`, "danger", 1000);
+    showAlert(`You need at least ${requiredStars} stars.`, "danger", 1000);
   }
 };
 
